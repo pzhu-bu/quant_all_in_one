@@ -1,0 +1,14 @@
+timezone: UTC
+default_currency: USD
+default_calendar: XNYS
+
+storage:
+  format: parquet
+  partitioning:
+    bars: ["vendor", "calendar", "symbol", "date"]
+    features: ["name", "calendar", "asof_date"]
+
+schemas:
+  bars: data/schema/bars.yaml
+  features: data/schema/features.yaml
+  symbol_master: data/schema/symbol_master.yaml

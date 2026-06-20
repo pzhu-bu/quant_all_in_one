@@ -1,0 +1,20 @@
+table: bars
+description: Point-in-time OHLCV bar data.
+primary_key: ["vendor", "symbol", "timestamp", "asof_timestamp"]
+timezone: UTC
+currency: column:currency
+calendar: column:calendar
+point_in_time: asof_timestamp
+columns:
+  vendor: string
+  symbol: string
+  timestamp: timestamp[us, UTC]
+  asof_timestamp: timestamp[us, UTC]
+  calendar: string
+  currency: string
+  open: float64
+  high: float64
+  low: float64
+  close: float64
+  volume: float64
+  adjustment_factor: float64

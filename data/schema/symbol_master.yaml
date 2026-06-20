@@ -1,0 +1,17 @@
+table: symbol_master
+description: Versioned symbol metadata with effective-date ranges.
+primary_key: ["vendor", "symbol", "effective_from"]
+timezone: UTC
+currency: column:currency
+calendar: column:calendar
+point_in_time: asof_timestamp
+columns:
+  vendor: string
+  symbol: string
+  exchange: string
+  asset_class: string
+  currency: string
+  calendar: string
+  effective_from: date32
+  effective_to: date32
+  asof_timestamp: timestamp[us, UTC]

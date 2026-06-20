@@ -1,0 +1,16 @@
+table: features
+description: Versioned point-in-time model features.
+primary_key: ["feature_set", "symbol", "timestamp", "asof_timestamp", "feature_name"]
+timezone: UTC
+currency: nullable
+calendar: column:calendar
+point_in_time: asof_timestamp
+columns:
+  feature_set: string
+  feature_version: string
+  symbol: string
+  timestamp: timestamp[us, UTC]
+  asof_timestamp: timestamp[us, UTC]
+  calendar: string
+  feature_name: string
+  feature_value: float64

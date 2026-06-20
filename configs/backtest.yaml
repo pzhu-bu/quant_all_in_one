@@ -1,0 +1,16 @@
+engine:
+  mode: vectorized
+  calendar: XNYS
+  timezone: UTC
+
+account:
+  base_currency: USD
+  initial_cash: 1000000
+
+costs:
+  commission_bps: 1.0
+  slippage_bps: 2.0
+
+execution:
+  price: close
+  delay_bars: 1

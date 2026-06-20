@@ -1,0 +1,10 @@
+pre_trade:
+  max_gross_exposure: 1.5
+  max_net_exposure: 1.0
+  max_single_name_weight: 0.05
+  max_sector_weight: 0.25
+
+daily:
+  var_confidence: 0.95
+  max_daily_var: 0.025
+  max_drawdown: 0.15

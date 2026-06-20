@@ -1,0 +1,28 @@
+name: quant-all-in-one
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - cmake
+  - ninja
+  - cxx-compiler
+  - duckdb
+  - pyarrow
+  - pandas
+  - polars
+  - numpy
+  - scipy
+  - statsmodels
+  - scikit-learn
+  - pytest
+  - ruff
+  - mypy
+  - pre-commit
+  - pybind11
+  - eigen
+  - gtest
+  - benchmark
+  - quantlib
+  - pip:
+      - -e ".[dev,research,ml,crypto]"

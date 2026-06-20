@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: uv pip install --system -e ".[dev]"
+      - run: ruff check .
+      - run: mypy src
+      - run: pytest
+      - run: python scripts/check_data_contracts.py
+
+  cpp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y cmake ninja-build
+      - run: cmake -S . -B build -G Ninja -DQUANTLAB_BUILD_TESTS=ON
+      - run: cmake --build build
+      - run: ctest --test-dir build --output-on-failure
